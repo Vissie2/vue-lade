@@ -1,0 +1,56 @@
+{
+  "name": "vue-lade",
+  "version": "0.0.0",
+  "description": "A unstyled drawer/sheet/value component for Vue.",
+  "keywords": [
+    "bottom-sheet",
+    "drawer",
+    "sheet",
+    "vaul",
+    "vue"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vissie2/vue-lade.git"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "packageManager": "pnpm@11.9.0",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./style.css": "./dist/style.css",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "play": "vite",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "oxlint --fix src playground",
+    "format": "oxfmt --write src playground"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.7",
+    "oxfmt": "^0.57.0",
+    "oxlint": "^1.72.0",
+    "tsdown": "^0.22.3",
+    "typescript": "^5.6.0",
+    "vite": "^8.1.2",
+    "vue": "^3.5.0",
+    "vue-tsc": "^3.3.6"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  }
+}

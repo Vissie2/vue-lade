@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, system-ui, sans-serif;
+  margin: 0;
+  background: #f4f4f5;
+  font-size: 15px;
+  color: #18181b;
+}
+
+#app {
+  background: #f4f4f5;
+  min-height: 100vh;
+}
+
+main {
+  padding: 48px 20px;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  background: #fff;
+  border: 1px solid #d4d4d8;
+  border-radius: 12px;
+  padding: 12px 16px;
+  width: fit-content;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+select {
+  border: 1px solid #d4d4d8;
+  background: #fff;
+  outline: 0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  appearance: none;
+}
+
+button.trigger {
+  border: 1px solid #d4d4d8;
+  background: #fff;
+  outline: 0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.drawer-inner {
+  padding: 16px 20px 28px;
+  overflow-y: auto;
+}
+
+.drawer-inner h2 {
+  margin: 8px 0 4px;
+}
+
+.drawer-inner p {
+  margin: 0 0 16px;
+}
+
+.drawwer-inner input {
+  width: 100%;
+  border: 1px solid #d4d4d8;
+  background: #fff;
+  border-radius: 12px;
+  outline: 0;
+  appearance: none;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+}
+
+.close {
+  border: 0;
+  background: #18181b;
+  color: #fff;
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+}
