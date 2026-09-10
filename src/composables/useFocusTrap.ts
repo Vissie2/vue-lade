@@ -13,7 +13,8 @@ const FOCUSABLE_SELECTOR = [
 
 function getFocusableElements(container: HTMLElement): HTMLElement[] {
   return Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)).filter(
-    (element) => element.offsetWidth > 0 || element.offsetHeight > 0 || element === document.activeElement,
+    (element) =>
+      element.offsetWidth > 0 || element.offsetHeight > 0 || element === document.activeElement,
   );
 }
 

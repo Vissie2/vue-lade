@@ -126,13 +126,7 @@ export const DrawerHandle = defineComponent({
           'data-vaul-handle': '',
           'aria-hidden': 'true',
         },
-        [
-          h(
-            'span',
-            { 'data-vaul-handle-hitarea': '', 'aria-hidden': 'true' },
-            slots.default?.(),
-          ),
-        ],
+        [h('span', { 'data-vaul-handle-hitarea': '', 'aria-hidden': 'true' }, slots.default?.())],
       );
     };
   },

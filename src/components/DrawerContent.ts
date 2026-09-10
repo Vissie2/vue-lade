@@ -1,18 +1,17 @@
 // npm
-import { cloneVNode, computed, defineComponent, h, ref, watch } from "vue";
+import { cloneVNode, computed, defineComponent, h, ref, watch } from 'vue';
 
 // composables
-import { useAriaHidden } from "~/composables/useAriaHidden";
-import { useEscapeKeydown } from "~/composables/useEscapeKeydown";
-import { useFocusTrap } from "~/composables/useFocusTrap";
-import { usePointerDownOutside } from "~/composables/usePointerDownOutside";
-import { usePresence } from "~/composables/usePresence";
-import { useScaleBackground } from "~/composables/useScaleBackground";
-
+import { useAriaHidden } from '~/composables/useAriaHidden';
+import { useEscapeKeydown } from '~/composables/useEscapeKeydown';
+import { useFocusTrap } from '~/composables/useFocusTrap';
+import { usePointerDownOutside } from '~/composables/usePointerDownOutside';
+import { usePresence } from '~/composables/usePresence';
+import { useScaleBackground } from '~/composables/useScaleBackground';
 // core
-import { useDrawerContext } from "~/context";
-import { getSingleChild } from "~/primitive";
-import type { DrawerDirection } from "~/types";
+import { useDrawerContext } from '~/context';
+import { getSingleChild } from '~/primitive';
+import type { DrawerDirection } from '~/types';
 
 interface PointerPosition {
   x: number;
@@ -20,7 +19,7 @@ interface PointerPosition {
 }
 
 export const DrawerContent = defineComponent({
-  name: "DrawerContent",
+  name: 'DrawerContent',
   inheritAttrs: false,
   props: {
     asChild: {
@@ -88,20 +87,11 @@ export const DrawerContent = defineComponent({
 
     useEscapeKeydown(isOpen, onEscape);
 
-    usePointerDownOutside(
-      trapEnabled,
-      drawerRef,
-      [triggerRef],
-      onPointerDownOutside,
-    );
+    usePointerDownOutside(trapEnabled, drawerRef, [triggerRef], onPointerDownOutside);
 
     useAriaHidden(trapEnabled, drawerRef);
 
-    function isDeltaInDirection(
-      delta: PointerPosition,
-      dir: DrawerDirection,
-      threshold = 0,
-    ) {
+    function isDeltaInDirection(delta: PointerPosition, dir: DrawerDirection, threshold = 0) {
       if (wasBeyondThePointRef.value) {
         return true;
       }
@@ -111,11 +101,11 @@ export const DrawerContent = defineComponent({
       const isDeltaX = deltaX > deltaY;
       let dFactor = -1;
 
-      if (["bottom", "right"].includes(dir)) {
+      if (['bottom', 'right'].includes(dir)) {
         dFactor = 1;
       }
 
-      if (dir === "left" || dir === "right") {
+      if (dir === 'left' || dir === 'right') {
         const isReverseDirection = delta.x * dFactor < 0;
 
         if (!isReverseDirection && deltaX >= 0 && deltaX <= threshold) {
@@ -194,7 +184,7 @@ export const DrawerContent = defineComponent({
 
       let swipeStartThreshold: number;
 
-      if (event.pointerType === "touch") {
+      if (event.pointerType === 'touch') {
         swipeStartThreshold = 10;
       } else {
         swipeStartThreshold = 2;
@@ -205,11 +195,7 @@ export const DrawerContent = defineComponent({
         y: yPosition,
       };
 
-      const isAllowedToSwipe = isDeltaInDirection(
-        delta,
-        direction.value,
-        swipeStartThreshold,
-      );
+      const isAllowedToSwipe = isDeltaInDirection(delta, direction.value, swipeStartThreshold);
 
       if (isAllowedToSwipe) {
         onDrag(event);
@@ -246,64 +232,64 @@ export const DrawerContent = defineComponent({
 
       if (snapPointsOffset.value && snapPointsOffset.value.length > 0) {
         snapStyle = {
-          "--snap-point-height": `${snapPointsOffset.value[activeSnapPointIndex.value ?? 0]}px`,
+          '--snap-point-height': `${snapPointsOffset.value[activeSnapPointIndex.value ?? 0]}px`,
         };
       }
 
       let ariaModal: string | undefined;
 
       if (modal.value) {
-        ariaModal = "true";
+        ariaModal = 'true';
       }
 
       let delayedSnapPointsValue: string;
 
       if (delayedSnapPoints.value) {
-        delayedSnapPointsValue = "true";
+        delayedSnapPointsValue = 'true';
       } else {
-        delayedSnapPointsValue = "false";
+        delayedSnapPointsValue = 'false';
       }
 
       let snapPointsValue: string;
 
       if (isOpen.value && hasSnapPoints.value) {
-        snapPointsValue = "true";
+        snapPointsValue = 'true';
       } else {
-        snapPointsValue = "false";
+        snapPointsValue = 'false';
       }
 
       let customContainerValue: string;
 
       if (container.value) {
-        customContainerValue = "true";
+        customContainerValue = 'true';
       } else {
-        customContainerValue = "false";
+        customContainerValue = 'false';
       }
 
       let animateValue: string;
 
       if (shouldAnimate.value) {
-        animateValue = "true";
+        animateValue = 'true';
       } else {
-        animateValue = "false";
+        animateValue = 'false';
       }
 
       const elProps = {
         ...attrs,
         ref: setRef,
-        role: "dialog",
-        "aria-modal": ariaModal,
-        "aria-labelledby": titleId.value,
-        "aria-describedby": descriptionId.value,
+        role: 'dialog',
+        'aria-modal': ariaModal,
+        'aria-labelledby': titleId.value,
+        'aria-describedby': descriptionId.value,
         tabindex: -1,
-        "data-vaul-drawer-direction": direction.value,
-        "data-vaul-drawer": "",
-        "data-vaul-has-snap-points": hasSnapPoints.value ? "true" : "false",
-        "data-vaul-delayed-snap-points": delayedSnapPointsValue,
-        "data-vaul-snap-points": snapPointsValue,
-        "data-vaul-custom-container": customContainerValue,
-        "data-vaul-animate": animateValue,
-        "data-state": state.value,
+        'data-vaul-drawer-direction': direction.value,
+        'data-vaul-drawer': '',
+        'data-vaul-has-snap-points': hasSnapPoints.value ? 'true' : 'false',
+        'data-vaul-delayed-snap-points': delayedSnapPointsValue,
+        'data-vaul-snap-points': snapPointsValue,
+        'data-vaul-custom-container': customContainerValue,
+        'data-vaul-animate': animateValue,
+        'data-state': state.value,
         style: [snapStyle, attrs.style],
         onPointerdown,
         onPointermove,
@@ -322,7 +308,7 @@ export const DrawerContent = defineComponent({
         return null;
       }
 
-      return h("div", elProps, slots.default?.());
+      return h('div', elProps, slots.default?.());
     };
   },
 });

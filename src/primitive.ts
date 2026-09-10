@@ -1,17 +1,13 @@
 // npm
-import type { PropType, VNode } from "vue";
-import { cloneVNode, Comment, defineComponent, Fragment, h, Text } from "vue";
+import type { PropType, VNode } from 'vue';
+import { cloneVNode, Comment, defineComponent, Fragment, h, Text } from 'vue';
 
 function isRenderableVNode(vnode: VNode): boolean {
   if (vnode.type === Comment) {
     return false;
   }
 
-  if (
-    vnode.type === Text &&
-    typeof vnode.children === "string" &&
-    vnode.children.trim() === ""
-  ) {
+  if (vnode.type === Text && typeof vnode.children === 'string' && vnode.children.trim() === '') {
     return false;
   }
 
@@ -43,7 +39,7 @@ export function getSingleChild(nodes: VNode[] | undefined): VNode | null {
  * it renders `as` (default `div`). Equivalent to Radix's `asChild` / reka-ui Primitive.
  */
 export const Primitive = defineComponent({
-  name: "Primitive",
+  name: 'Primitive',
   inheritAttrs: false,
   props: {
     asChild: {
@@ -52,7 +48,7 @@ export const Primitive = defineComponent({
     },
     as: {
       type: [String, Object, Function] as PropType<string | object>,
-      default: "div",
+      default: 'div',
     },
   },
   setup(props, { slots, attrs }) {
@@ -65,7 +61,7 @@ export const Primitive = defineComponent({
         if (!child) {
           if (children && children.filter(isRenderableVNode).length > 1) {
             console.warn(
-              "[vue-lade] `as-child` expects a single child element. Received multiple children; rendering nothing.",
+              '[vue-lade] `as-child` expects a single child element. Received multiple children; rendering nothing.',
             );
           }
 
@@ -77,11 +73,7 @@ export const Primitive = defineComponent({
 
       // Vue h() requires a cast for dynamic component types
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      return h(
-        props.as as any,
-        attrs,
-        slots.default ? slots.default() : undefined,
-      );
+      return h(props.as as any, attrs, slots.default ? slots.default() : undefined);
     };
   },
 });

@@ -1,8 +1,5 @@
 <template>
-  <Drawer.Root
-    :direction="direction"
-    :should-scale-background="shouldScaleBackground"
-  >
+  <Drawer.Root :direction="direction" :should-scale-background="shouldScaleBackground">
     <Drawer.Trigger class="trigger">Open drawer</Drawer.Trigger>
 
     <Drawer.Portal>
@@ -34,10 +31,10 @@
 
 <script setup lang="ts">
 // npm
-import { Drawer } from "vue-lade";
+import { Drawer } from 'vue-lade';
 
 defineProps<{
-  direction?: "bottom" | "top" | "left" | "right";
+  direction?: 'bottom' | 'top' | 'left' | 'right';
   shouldScaleBackground?: boolean;
 }>();
 </script>

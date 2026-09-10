@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-[data-vaul-drawer-direction="bottom"] {
+[data-vaul-drawer-direction='bottom'] {
   left: 0;
   right: 0;
   bottom: 0;
@@ -27,12 +27,12 @@
 }
 
 /* Snap-point drawers translate their full height, so they need 100% height. */
-[data-vaul-drawer][data-vaul-has-snap-points="true"] {
+[data-vaul-drawer][data-vaul-has-snap-points='true'] {
   height: 100%;
   max-height: 100%;
 }
 
-[data-vaul-drawer-direction="top"] {
+[data-vaul-drawer-direction='top'] {
   left: 0;
   right: 0;
   top: 0;
@@ -40,7 +40,7 @@
   border-radius: 0 0 16px 16px;
 }
 
-[data-vaul-drawer-direction="left"] {
+[data-vaul-drawer-direction='left'] {
   top: 0;
   bottom: 0;
   left: 0;
@@ -49,7 +49,7 @@
   border-radius: 0 16px 16px 0;
 }
 
-[data-vaul-drawer-direction="right"] {
+[data-vaul-drawer-direction='right'] {
   top: 0;
   bottom: 0;
   right: 0;

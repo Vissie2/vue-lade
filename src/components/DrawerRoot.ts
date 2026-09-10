@@ -4,7 +4,6 @@ import type { PropType } from 'vue';
 
 // composables
 import { useDrawer } from '~/composables/useDrawer';
-
 // core
 import { CLOSE_THRESHOLD, SCROLL_LOCK_TIMEOUT } from '~/constants';
 import type { DrawerDirection } from '~/types';

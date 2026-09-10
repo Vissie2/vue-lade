@@ -3,7 +3,6 @@ import { cloneVNode, computed, defineComponent, h } from 'vue';
 
 // composables
 import { usePresence } from '~/composables/usePresence';
-
 // core
 import { useDrawerContext } from '~/context';
 import { getSingleChild } from '~/primitive';

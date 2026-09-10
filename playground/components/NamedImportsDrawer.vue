@@ -1,8 +1,5 @@
 <template>
-  <DrawerRoot
-    :direction="direction"
-    :should-scale-background="shouldScaleBackground"
-  >
+  <DrawerRoot :direction="direction" :should-scale-background="shouldScaleBackground">
     <DrawerTrigger class="trigger">Named imports</DrawerTrigger>
 
     <DrawerPortal>
@@ -28,7 +25,7 @@
 
 <script setup lang="ts">
 defineProps<{
-  direction?: "bottom" | "top" | "left" | "right";
+  direction?: 'bottom' | 'top' | 'left' | 'right';
   shouldScaleBackground?: boolean;
 }>();
 
@@ -41,5 +38,5 @@ import {
   DrawerPortal,
   DrawerRoot,
   DrawerTrigger,
-} from "vue-lade";
+} from 'vue-lade';
 </script>

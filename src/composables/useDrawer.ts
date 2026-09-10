@@ -6,7 +6,6 @@ import { isIOS, isMobileFirefox } from '~/browser';
 import { usePositionFixed } from '~/composables/usePositionFixed';
 import { usePreventScroll, isInput } from '~/composables/usePreventScroll';
 import { useSnapPoints } from '~/composables/useSnapPoints';
-
 // core
 import {
   BORDER_RADIUS,
@@ -282,7 +281,11 @@ export function useDrawer(props: DrawerRootProps, emit: DrawerEmitFns) {
       return;
     }
 
-    if (drawerRef.value && event.target instanceof Node && !drawerRef.value.contains(event.target)) {
+    if (
+      drawerRef.value &&
+      event.target instanceof Node &&
+      !drawerRef.value.contains(event.target)
+    ) {
       return;
     }
 
@@ -440,7 +443,10 @@ export function useDrawer(props: DrawerRootProps, emit: DrawerEmitFns) {
         return;
       }
 
-      if (!isAllowedToDrag.value && !shouldDrag(event.target as EventTarget, isDraggingInDirection)) {
+      if (
+        !isAllowedToDrag.value &&
+        !shouldDrag(event.target as EventTarget, isDraggingInDirection)
+      ) {
         return;
       }
 

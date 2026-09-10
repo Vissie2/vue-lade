@@ -27,5 +27,5 @@
 
 <script setup lang="ts">
 // npm
-import { Drawer } from "vue-lade";
+import { Drawer } from 'vue-lade';
 </script>

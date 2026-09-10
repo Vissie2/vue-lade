@@ -4,7 +4,6 @@ import { computed, onScopeDispose, ref, watch } from 'vue';
 
 // composables
 import { useControllableState } from '~/composables/useControllableState';
-
 // core
 import { TRANSITIONS, TRANSITION_EASE, VELOCITY_THRESHOLD } from '~/constants';
 import { isVertical, set } from '~/helpers';
