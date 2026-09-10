@@ -72,7 +72,7 @@ export const Primitive = defineComponent({
       }
 
       // Vue h() requires a cast for dynamic component types
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // @typescript-eslint/no-explicit-any
       return h(props.as as any, attrs, slots.default ? slots.default() : undefined);
     };
   },

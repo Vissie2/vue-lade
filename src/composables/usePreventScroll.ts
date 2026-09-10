@@ -8,9 +8,9 @@ import { isIOS } from '~/browser';
 
 const KEYBOARD_BUFFER = 24;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// @typescript-eslint/no-explicit-any
 function chain(...callbacks: any[]): (...args: any[]) => void {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // @typescript-eslint/no-explicit-any
   return (...args: any[]) => {
     for (const callback of callbacks) {
       if (typeof callback === 'function') {
@@ -206,7 +206,7 @@ function setStyle(element: HTMLElement, style: string, value: string) {
 function addEvent(
   target: EventTarget,
   event: string,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // @typescript-eslint/no-explicit-any
   handler: (ev: any) => any,
   options?: boolean | AddEventListenerOptions,
 ) {

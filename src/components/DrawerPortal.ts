@@ -18,7 +18,7 @@ export const DrawerPortal = defineComponent({
 
     return () =>
       // Vue's h() type does not accept Teleport directly
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // @typescript-eslint/no-explicit-any
       h(Teleport as any, { to: props.to ?? container.value ?? 'body' }, slots.default?.());
   },
 });
