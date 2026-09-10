@@ -120,6 +120,7 @@ Mirrors React Vaul. Callbacks are emited. `open` and `activeSnapPoint` both supp
 | `setBackgroundColorOnScale` | `boolean`                                | `true`           |
 | `noBodyStyles`              | `boolean`                                | `false`          |
 | `repositionInputs`          | `boolean`                                | `true`           |
+| `disablePreventScroll`      | `boolean`                                | `true`           |
 | `preventScrollRestoration`  | `boolean`                                | `false`          |
 | `fixed`                     | `boolean`                                | `false`          |
 | `nested`                    | `boolean`                                | `false`          |
@@ -139,6 +140,9 @@ Mirrors React Vaul. Callbacks are emited. `open` and `activeSnapPoint` both supp
 
 > [!IMPORTANT]
 > `shouldScaleBackground` requires a `data-vaul-drawer-wrapper` attribute on the element wrapping your app content (not the `#app` mount point itself). See [`playground/index.html`](./playground/index.html) for an example.
+
+> [!NOTE]
+> `disablePreventScroll` is inverted: the default `true` **enables** iOS scroll prevention, and `false` disables it. The name and default mirror React Vaul. It has no effect outside iOS Safari.
 
 > [!NOTE]
 > `as-child` is supported on the visual components (`Drawer.Trigger`, `Drawer.Overlay`, `Drawer.Content`, `Drawer.Close`). It delegates rendering and all props/attrs to a single child element instead of wrapping it.
