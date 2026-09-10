@@ -147,8 +147,8 @@ Mirrors React Vaul. Callbacks are emited. `open` and `activeSnapPoint` both supp
 
 Two other Vue ports of the original [vaul](https://github.com/emilkowalski/vaul) exist:
 
-- [**unovue/vaul-vue**](https://github.com/unovue/vaul-vue) — Unmaintained. Requires installing `@vueuse/core`, `reka-ui`, and `vue` as runtime dependencies.
-- [**unovue/reka-ui**](https://github.com/unovue/reka-ui) — Maintained. Requires installing the entire `reka-ui` library and all its dependencies.
+- [**unovue/vaul-vue**](https://github.com/unovue/vaul-vue) — Unmaintained. Requires installing `reka-ui` library.
+- [**unovue/reka-ui**](https://github.com/unovue/reka-ui) — Maintained. Requires installing the `reka-ui` library.
 
 This package has no runtime dependencies and ships only what you need.
 
