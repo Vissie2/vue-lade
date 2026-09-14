@@ -161,6 +161,63 @@ export function useSnapPoints(options: UseSnapPointsOptions) {
     return null;
   });
 
+  const snapProgress = ref(0);
+
+  function setSnapProgressFromOffset(offset: number) {
+    const offsets = snapPointsOffset.value;
+
+    if (!offsets || offsets.length < 2) {
+      snapProgress.value = 0;
+
+      return;
+    }
+
+    let hasSpan = false;
+
+    for (let index = 0; index < offsets.length - 1; index += 1) {
+      const from = offsets[index];
+      const to = offsets[index + 1];
+      const span = from - to;
+
+      if (span === 0) {
+        continue;
+      }
+
+      hasSpan = true;
+      const ratio = (from - offset) / span;
+
+      if (ratio >= 0 && ratio <= 1) {
+        snapProgress.value = index + ratio;
+
+        return;
+      }
+    }
+
+    // There is no range to be positioned within. Happens during SSR.
+    if (!hasSpan) {
+      snapProgress.value = 0;
+
+      return;
+    }
+
+    const first = offsets[0];
+    const last = offsets[offsets.length - 1];
+    const isDescending = last < first;
+    const isBeforeFirst = isDescending ? offset > first : offset < first;
+
+    snapProgress.value = isBeforeFirst ? 0 : offsets.length - 1;
+  }
+
+  watch(
+    [activeSnapPointOffset, snapPointsOffset],
+    () => {
+      if (activeSnapPointOffset.value !== null) {
+        setSnapProgressFromOffset(activeSnapPointOffset.value);
+      }
+    },
+    { immediate: true },
+  );
+
   function snapToPoint(dimension: number) {
     const newSnapPointIndex =
       snapPointsOffset.value?.findIndex((snapPointDim) => snapPointDim === dimension) ?? null;
@@ -168,6 +225,8 @@ export function useSnapPoints(options: UseSnapPointsOptions) {
     if (newSnapPointIndex !== null) {
       onSnapPointChange(newSnapPointIndex);
     }
+
+    setSnapProgressFromOffset(dimension);
 
     let transformValue: string;
 
@@ -346,6 +405,8 @@ export function useSnapPoints(options: UseSnapPointsOptions) {
       newValue = activeSnapPointOffset.value + draggedDistance;
     }
 
+    setSnapProgressFromOffset(newValue);
+
     // Don't do anything if we exceed the last (biggest) snap point
     if (
       (direction.value === 'bottom' || direction.value === 'right') &&
@@ -432,5 +493,6 @@ export function useSnapPoints(options: UseSnapPointsOptions) {
     onDrag,
     snapPointsOffset,
     snapToPoint,
+    snapProgress,
   };
 }

@@ -54,6 +54,7 @@ export interface DrawerEmitFns {
   release: (event: PointerEvent | null, open: boolean) => void;
   close: () => void;
   animationEnd: (open: boolean) => void;
+  snapProgress: (progress: number, isDragging: boolean) => void;
 }
 
 /**
@@ -236,6 +237,7 @@ export function useDrawer(props: DrawerRootProps, emit: DrawerEmitFns) {
     onDrag: onDragSnapPoints,
     shouldFade,
     getPercentageDragged: getSnapPointsPercentageDragged,
+    snapProgress,
   } = useSnapPoints({
     snapPoints,
     activeSnapPointProp: () => props.activeSnapPoint,
@@ -247,6 +249,10 @@ export function useDrawer(props: DrawerRootProps, emit: DrawerEmitFns) {
     direction,
     container,
     snapToSequentialPoint,
+  });
+
+  watch(snapProgress, (progress) => {
+    emit.snapProgress(progress, isDragging.value);
   });
 
   usePreventScroll(
@@ -978,6 +984,7 @@ export function useDrawer(props: DrawerRootProps, emit: DrawerEmitFns) {
     snapPointsOffset,
     snapPoints,
     activeSnapPointIndex,
+    snapProgress,
     modal,
     shouldFade,
     activeSnapPoint,
