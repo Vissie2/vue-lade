@@ -69,6 +69,10 @@ export const DrawerRoot = defineComponent({
       emit('animationEnd', open);
     }
 
+    function onSnapProgress(progress: number, isDragging: boolean) {
+      emit('snapProgress', progress, isDragging);
+    }
+
     useDrawer(props, {
       updateOpen: onUpdateOpen,
       updateActiveSnapPoint: onUpdateActiveSnapPoint,
@@ -76,6 +80,7 @@ export const DrawerRoot = defineComponent({
       release: onRelease,
       close: onClose,
       animationEnd: onAnimationEnd,
+      snapProgress: onSnapProgress,
     });
 
     return () => slots.default?.();

@@ -23,6 +23,7 @@ export interface DrawerContext {
     | Ref<Array<number | string> | undefined>
     | ComputedRef<Array<number | string> | undefined>;
   activeSnapPointIndex: ComputedRef<number | null> | Ref<number | null>;
+  snapProgress: Ref<number>;
   modal: ComputedRef<boolean> | Ref<boolean>;
   shouldFade: ComputedRef<boolean> | Ref<boolean>;
   activeSnapPoint: Ref<number | string | null> | ComputedRef<number | string | null | undefined>;
