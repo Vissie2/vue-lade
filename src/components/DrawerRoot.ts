@@ -43,15 +43,15 @@ export const DrawerRoot = defineComponent({
       default: undefined,
     },
   },
-  emits: [
-    'update:open',
-    'update:activeSnapPoint',
-    'drag',
-    'release',
-    'close',
-    'animationEnd',
-    'snapProgress',
-  ],
+  emits: {
+    'update:open': (_open: boolean) => true,
+    'update:activeSnapPoint': (_snapPoint: number | string | null) => true,
+    drag: (_event: PointerEvent, _percentageDragged: number) => true,
+    release: (_event: PointerEvent | null, _open: boolean) => true,
+    close: () => true,
+    animationEnd: (_open: boolean) => true,
+    snapProgress: (_progress: number, _isDragging: boolean) => true,
+  },
   setup(props, { slots, emit }) {
     function onUpdateOpen(open: boolean) {
       emit('update:open', open);
