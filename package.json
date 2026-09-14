@@ -1,7 +1,7 @@
 {
   "name": "vue-lade",
   "version": "0.1.0",
-  "description": "A unstyled drawer/sheet/value component for Vue.",
+  "description": "A unstyled drawer/sheet/vaul component for Vue.",
   "keywords": [
     "bottom-sheet",
     "drawer",
