@@ -50,3 +50,5 @@ export type { DrawerRootProps } from '~/composables/useDrawer';
 
 export { useDrawerContext } from '~/context';
 export { Primitive } from '~/primitive';
+
+export { TRANSITION_EASE, TRANSITIONS } from '~/constants';
