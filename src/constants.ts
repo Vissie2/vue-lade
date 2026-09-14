@@ -15,7 +15,7 @@ export const NESTED_DISPLACEMENT = 16;
 
 export const WINDOW_TOP_OFFSET = 26;
 
-export const DRAG_CLASS = 'vaul-dragging';
+export const DRAG_CLASS = 'lade-dragging';
 
 export const LONG_HANDLE_PRESS_TIMEOUT = 250;
 

@@ -7,7 +7,7 @@ import { useDrawerContext } from '~/context';
 import { assignStyle, isVertical } from '~/helpers';
 
 /**
- * Port of Vaul's `useScaleBackground`. Scales/insets the `[data-vaul-drawer-wrapper]`
+ * Port of Vaul's `useScaleBackground`. Scales/insets the `[data-lade-drawer-wrapper]`
  * element when the drawer opens (the iOS-style "card behind a sheet" effect).
  */
 export function useScaleBackground() {
@@ -32,9 +32,7 @@ export function useScaleBackground() {
         clearTimeout(timeoutId);
       }
 
-      const wrapperElement =
-        document.querySelector('[data-vaul-drawer-wrapper]') ||
-        document.querySelector('[vaul-drawer-wrapper]');
+      const wrapperElement = document.querySelector('[data-lade-drawer-wrapper]');
 
       if (!(wrapperElement instanceof HTMLElement)) {
         return;

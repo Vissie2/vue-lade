@@ -27,7 +27,7 @@ export const DrawerDescription = defineComponent({
           as: 'p',
           asChild: props.asChild,
           id,
-          'data-vaul-drawer-description': '',
+          'data-lade-drawer-description': '',
         },
         { default: () => slots.default?.() },
       );

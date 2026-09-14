@@ -122,11 +122,11 @@ export const DrawerHandle = defineComponent({
           onPointercancel: handleCancelInteraction,
           onPointerdown,
           onPointermove,
-          'data-vaul-drawer-visible': drawerVisible,
-          'data-vaul-handle': '',
+          'data-lade-drawer-visible': drawerVisible,
+          'data-lade-handle': '',
           'aria-hidden': 'true',
         },
-        [h('span', { 'data-vaul-handle-hitarea': '', 'aria-hidden': 'true' }, slots.default?.())],
+        [h('span', { 'data-lade-handle-hitarea': '', 'aria-hidden': 'true' }, slots.default?.())],
       );
     };
   },
