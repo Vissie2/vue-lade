@@ -125,7 +125,7 @@ export const DrawerContent = defineComponent({
     }
 
     // The snap-point enter animation is a CSS transition from `--initial-transform`
-    // (off-screen) to the active snap offset, switched on by `data-vaul-delayed-snap-points`.
+    // (off-screen) to the active snap offset, switched on by `data-lade-delayed-snap-points`.
     // Because this component stays mounted across open/close (only the element is
     // toggled), reset the flag on each open so the element first renders off-screen,
     // then flip it after a frame so the transition actually runs.
@@ -282,13 +282,13 @@ export const DrawerContent = defineComponent({
         'aria-labelledby': titleId.value,
         'aria-describedby': descriptionId.value,
         tabindex: -1,
-        'data-vaul-drawer-direction': direction.value,
-        'data-vaul-drawer': '',
-        'data-vaul-has-snap-points': hasSnapPoints.value ? 'true' : 'false',
-        'data-vaul-delayed-snap-points': delayedSnapPointsValue,
-        'data-vaul-snap-points': snapPointsValue,
-        'data-vaul-custom-container': customContainerValue,
-        'data-vaul-animate': animateValue,
+        'data-lade-drawer-direction': direction.value,
+        'data-lade-drawer': '',
+        'data-lade-has-snap-points': hasSnapPoints.value ? 'true' : 'false',
+        'data-lade-delayed-snap-points': delayedSnapPointsValue,
+        'data-lade-snap-points': snapPointsValue,
+        'data-lade-custom-container': customContainerValue,
+        'data-lade-animate': animateValue,
         'data-state': state.value,
         style: [snapStyle, attrs.style],
         onPointerdown,

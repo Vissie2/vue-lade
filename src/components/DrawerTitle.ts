@@ -27,7 +27,7 @@ export const DrawerTitle = defineComponent({
           as: 'h2',
           asChild: props.asChild,
           id,
-          'data-vaul-drawer-title': '',
+          'data-lade-drawer-title': '',
         },
         { default: () => slots.default?.() },
       );

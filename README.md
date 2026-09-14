@@ -79,7 +79,7 @@ import { Drawer } from "vue-lade";
 </script>
 ```
 
-The components are without styles. It sets `data-vaul-*`
+The components are without styles. It sets `data-lade-*`
 attributes and `--snap-point-height` / `--initial-transform` CSS variables; see
 [`playground/drawer.css`](./playground/drawer.css) for an example set of styles per direction.
 
@@ -139,7 +139,7 @@ Mirrors React Vaul. Callbacks are emited. `open` and `activeSnapPoint` both supp
 | `animationEnd`           | `{ open: boolean }`             | Fired when the open/close CSS animation completes.                              |
 
 > [!IMPORTANT]
-> `shouldScaleBackground` requires a `data-vaul-drawer-wrapper` attribute on the element wrapping your app content (not the `#app` mount point itself). See [`playground/index.html`](./playground/index.html) for an example.
+> `shouldScaleBackground` requires a `data-lade-drawer-wrapper` attribute on the element wrapping your app content (not the `#app` mount point itself). See [`playground/index.html`](./playground/index.html) for an example.
 
 > [!NOTE]
 > `disablePreventScroll` is inverted: the default `true` **enables** iOS scroll prevention, and `false` disables it. The name and default mirror React Vaul. It has no effect outside iOS Safari.

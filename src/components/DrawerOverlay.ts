@@ -66,10 +66,10 @@ export const DrawerOverlay = defineComponent({
       const elProps = {
         ...attrs,
         ref: setRef,
-        'data-vaul-overlay': '',
-        'data-vaul-snap-points': snapPointsValue,
-        'data-vaul-snap-points-overlay': snapPointsOverlayValue,
-        'data-vaul-animate': animateValue,
+        'data-lade-overlay': '',
+        'data-lade-snap-points': snapPointsValue,
+        'data-lade-snap-points-overlay': snapPointsOverlayValue,
+        'data-lade-animate': animateValue,
         'data-state': state.value,
         onMouseup: onMouseUp,
       };

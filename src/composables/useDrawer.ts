@@ -328,7 +328,7 @@ export function useDrawer(props: DrawerRootProps, emit: DrawerEmitFns) {
       return false;
     }
 
-    if (element.hasAttribute('data-vaul-no-drag') || element.closest('[data-vaul-no-drag]')) {
+    if (element.hasAttribute('data-lade-no-drag') || element.closest('[data-lade-no-drag]')) {
       return false;
     }
 
@@ -427,7 +427,7 @@ export function useDrawer(props: DrawerRootProps, emit: DrawerEmitFns) {
       }
 
       const absDraggedDistance = Math.abs(draggedDistance);
-      const wrapper = document.querySelector('[data-vaul-drawer-wrapper]');
+      const wrapper = document.querySelector('[data-lade-drawer-wrapper]');
       const drawerDimension =
         direction.value === 'bottom' || direction.value === 'top'
           ? drawerHeightRef.value
@@ -539,7 +539,7 @@ export function useDrawer(props: DrawerRootProps, emit: DrawerEmitFns) {
       return;
     }
 
-    const wrapper = document.querySelector('[data-vaul-drawer-wrapper]');
+    const wrapper = document.querySelector('[data-lade-drawer-wrapper]');
     const currentSwipeAmount = getTranslate(drawerRef.value, direction.value);
 
     set(drawerRef.value, {

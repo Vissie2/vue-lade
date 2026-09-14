@@ -143,7 +143,7 @@ export function usePositionFixed(options: UsePositionFixedOptions) {
     }
 
     // Another drawer is opened, safe to ignore the execution
-    const hasDrawerOpened = !!document.querySelector('[data-vaul-drawer]');
+    const hasDrawerOpened = !!document.querySelector('[data-lade-drawer]');
 
     if (hasDrawerOpened) {
       return;
