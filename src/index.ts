@@ -23,27 +23,6 @@ export {
   DrawerClose,
 };
 
-/**
- * Compound-component namespace, mirroring React Vaul's `Drawer.*` API.
- *
- * ```ts
- * import { Drawer } from 'vue-lade'
- * // <Drawer.Root> <Drawer.Trigger/> <Drawer.Portal> ... </Drawer.Portal> </Drawer.Root>
- * ```
- */
-export const Drawer = {
-  Root: DrawerRoot,
-  NestedRoot: DrawerNestedRoot,
-  Trigger: DrawerTrigger,
-  Portal: DrawerPortal,
-  Overlay: DrawerOverlay,
-  Content: DrawerContent,
-  Handle: DrawerHandle,
-  Title: DrawerTitle,
-  Description: DrawerDescription,
-  Close: DrawerClose,
-};
-
 export type { DrawerContext } from '~/context';
 export type { DrawerDirection, SnapPoint } from '~/types';
 export type { DrawerRootProps } from '~/composables/useDrawer';

@@ -31,8 +31,6 @@
       <SnapPointsDrawer />
 
       <ControlledDrawer :direction="direction" :should-scale-background="shouldScaleBackground" />
-
-      <NamedImportsDrawer :direction="direction" :should-scale-background="shouldScaleBackground" />
     </div>
   </main>
 </template>
@@ -43,7 +41,6 @@ import { ref } from 'vue';
 
 // components
 import ControlledDrawer from './components/ControlledDrawer.vue';
-import NamedImportsDrawer from './components/NamedImportsDrawer.vue';
 import SnapPointsDrawer from './components/SnapPointsDrawer.vue';
 import UncontrolledDrawer from './components/UncontrolledDrawer.vue';
 

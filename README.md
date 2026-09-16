@@ -53,32 +53,6 @@ import {
 </script>
 ```
 
-If prefered, the `Drawer.*` namespace can be used instead:
-
-```vue
-<template>
-  <Drawer.Root>
-    <Drawer.Trigger>Open</Drawer.Trigger>
-
-    <Drawer.Portal>
-      <Drawer.Overlay />
-
-      <Drawer.Content>
-        <Drawer.Handle />
-
-        <Drawer.Title>Title</Drawer.Title>
-
-        <Drawer.Description>Description</Drawer.Description>
-      </Drawer.Content>
-    </Drawer.Portal>
-  </Drawer.Root>
-</template>
-
-<script setup lang="ts">
-import { Drawer } from "vue-lade";
-</script>
-```
-
 The components are without styles. It sets `data-lade-*`
 attributes and `--snap-point-height` / `--initial-transform` CSS variables; see
 [`playground/drawer.css`](./playground/drawer.css) for an example set of styles per direction.
@@ -145,7 +119,7 @@ Mirrors React Vaul. Callbacks are emited. `open` and `activeSnapPoint` both supp
 > `disablePreventScroll` is inverted: the default `true` **enables** iOS scroll prevention, and `false` disables it. The name and default mirror React Vaul. It has no effect outside iOS Safari.
 
 > [!NOTE]
-> `as-child` is supported on the visual components (`Drawer.Trigger`, `Drawer.Overlay`, `Drawer.Content`, `Drawer.Close`). It delegates rendering and all props/attrs to a single child element instead of wrapping it.
+> `as-child` is supported on the visual components (`DrawerTrigger`, `DrawerOverlay`, `DrawerContent`, `DrawerClose`). It delegates rendering and all props/attrs to a single child element instead of wrapping it.
 
 ## Alternatives
 

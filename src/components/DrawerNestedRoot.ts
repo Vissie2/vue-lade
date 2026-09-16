@@ -11,9 +11,9 @@ type OpenFn = (open: boolean) => void;
 type CloseFn = () => void;
 
 /**
- * A `Drawer.Root` variant to be rendered inside another drawer. Wires the child's
+ * A `DrawerRoot` variant to be rendered inside another drawer. Wires the child's
  * drag/open/release events to the parent's nested-transform handlers so the parent
- * scales back as the child opens. Must be placed within another `Drawer.Root`.
+ * scales back as the child opens. Must be placed within another `DrawerRoot`.
  */
 export const DrawerNestedRoot = defineComponent({
   name: 'DrawerNestedRoot',
