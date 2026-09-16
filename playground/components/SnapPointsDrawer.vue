@@ -3,29 +3,39 @@
     `:fade-from-index="0"` dims the backdrop at every snap point.
     Omit it (default = last index) to only dim at full height.
   -->
-  <Drawer.Root :snap-points="[0.35, 0.7, 1]" :fade-from-index="0">
-    <Drawer.Trigger class="trigger">Snap points</Drawer.Trigger>
+  <DrawerRoot :snap-points="[0.35, 0.7, 1]" :fade-from-index="0">
+    <DrawerTrigger class="trigger">Snap points</DrawerTrigger>
 
-    <Drawer.Portal>
-      <Drawer.Overlay />
+    <DrawerPortal>
+      <DrawerOverlay />
 
-      <Drawer.Content>
-        <Drawer.Handle />
+      <DrawerContent>
+        <DrawerHandle />
         <div class="drawer-inner">
-          <Drawer.Title>Snap points</Drawer.Title>
+          <DrawerTitle>Snap points</DrawerTitle>
 
-          <Drawer.Description>
+          <DrawerDescription>
             Drag between 35% / 70% / 100%. Tap the handle to cycle.
-          </Drawer.Description>
+          </DrawerDescription>
 
-          <Drawer.Close class="close">Close</Drawer.Close>
+          <DrawerClose class="close">Close</DrawerClose>
         </div>
-      </Drawer.Content>
-    </Drawer.Portal>
-  </Drawer.Root>
+      </DrawerContent>
+    </DrawerPortal>
+  </DrawerRoot>
 </template>
 
 <script setup lang="ts">
 // npm
-import { Drawer } from 'vue-lade';
+import {
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHandle,
+  DrawerOverlay,
+  DrawerPortal,
+  DrawerRoot,
+  DrawerTitle,
+  DrawerTrigger,
+} from 'vue-lade';
 </script>

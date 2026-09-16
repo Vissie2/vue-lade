@@ -58,7 +58,7 @@ export interface DrawerEmitFns {
 }
 
 /**
- * Core of `Drawer.Root`: ports Vaul's `Root` state machine (drag gesture, snap-point
+ * Core of `DrawerRoot`: ports Vaul's `Root` state machine (drag gesture, snap-point
  * release, nested-drawer transforms, body handling) and provides the drawer context.
  */
 export function useDrawer(props: DrawerRootProps, emit: DrawerEmitFns) {

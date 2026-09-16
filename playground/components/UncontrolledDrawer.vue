@@ -1,19 +1,19 @@
 <template>
-  <Drawer.Root :direction="direction" :should-scale-background="shouldScaleBackground">
-    <Drawer.Trigger class="trigger">Open drawer</Drawer.Trigger>
+  <DrawerRoot :direction="direction" :should-scale-background="shouldScaleBackground">
+    <DrawerTrigger class="trigger">Open drawer</DrawerTrigger>
 
-    <Drawer.Portal>
-      <Drawer.Overlay />
+    <DrawerPortal>
+      <DrawerOverlay />
 
-      <Drawer.Content>
-        <Drawer.Handle v-if="direction === 'bottom' || direction === 'top'" />
+      <DrawerContent>
+        <DrawerHandle v-if="direction === 'bottom' || direction === 'top'" />
 
         <div class="drawer-inner">
-          <Drawer.Title>Unstyled drawer</Drawer.Title>
+          <DrawerTitle>Unstyled drawer</DrawerTitle>
 
-          <Drawer.Description>
+          <DrawerDescription>
             Drag me down to dismiss, or use the buttons below.
-          </Drawer.Description>
+          </DrawerDescription>
 
           <p>Focus is trapped here. Try Tab / Shift+Tab. Escape closes.</p>
 
@@ -22,16 +22,26 @@
             style="padding: 8px; width: 100%; margin-bottom: 12px"
           />
 
-          <Drawer.Close class="close">Close</Drawer.Close>
+          <DrawerClose class="close">Close</DrawerClose>
         </div>
-      </Drawer.Content>
-    </Drawer.Portal>
-  </Drawer.Root>
+      </DrawerContent>
+    </DrawerPortal>
+  </DrawerRoot>
 </template>
 
 <script setup lang="ts">
 // npm
-import { Drawer } from 'vue-lade';
+import {
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHandle,
+  DrawerOverlay,
+  DrawerPortal,
+  DrawerRoot,
+  DrawerTitle,
+  DrawerTrigger,
+} from 'vue-lade';
 
 defineProps<{
   direction?: 'bottom' | 'top' | 'left' | 'right';

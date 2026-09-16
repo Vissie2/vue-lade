@@ -1,33 +1,42 @@
 <template>
   <button class="trigger" @click="open = true">Open controlled</button>
 
-  <Drawer.Root
+  <DrawerRoot
     v-model:open="open"
     :direction="direction"
     :should-scale-background="shouldScaleBackground"
   >
-    <Drawer.Portal>
-      <Drawer.Overlay />
+    <DrawerPortal>
+      <DrawerOverlay />
 
-      <Drawer.Content>
-        <Drawer.Handle />
+      <DrawerContent>
+        <DrawerHandle />
 
         <div class="drawer-inner">
-          <Drawer.Title>Controlled via v-model:open</Drawer.Title>
+          <DrawerTitle>Controlled via v-model:open</DrawerTitle>
 
-          <Drawer.Description>open = {{ open }}</Drawer.Description>
+          <DrawerDescription>open = {{ open }}</DrawerDescription>
 
-          <Drawer.Close class="close">Close</Drawer.Close>
+          <DrawerClose class="close">Close</DrawerClose>
         </div>
-      </Drawer.Content>
-    </Drawer.Portal>
-  </Drawer.Root>
+      </DrawerContent>
+    </DrawerPortal>
+  </DrawerRoot>
 </template>
 
 <script setup lang="ts">
 // npm
 import { ref } from 'vue';
-import { Drawer } from 'vue-lade';
+import {
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHandle,
+  DrawerOverlay,
+  DrawerPortal,
+  DrawerRoot,
+  DrawerTitle,
+} from 'vue-lade';
 
 defineProps<{
   direction?: 'bottom' | 'top' | 'left' | 'right';

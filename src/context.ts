@@ -54,7 +54,7 @@ export function useDrawerContext(): DrawerContext {
   const context = inject(DRAWER_CONTEXT_KEY, null);
 
   if (!context) {
-    throw new Error('useDrawerContext must be used within a Drawer.Root');
+    throw new Error('useDrawerContext must be used within a DrawerRoot');
   }
 
   return context;
