@@ -3,7 +3,7 @@
 A drawer/sheet/vaul component for Vue. — A port of [vaul](https://github.com/emilkowalski/vaul) created by Emil Kowalski.
 
 - **Zero dependencies** — Uses Vue as a peer dependency;
-- **Tiny** — 9.7 kB JS + 1.1 kB CSS, gzipped;
+- **Tiny** — 9.8 kB JS + 1.1 kB CSS, gzipped;
 - **Faithful port** — The same API and behaviour as the React original.
 
 ## Install
@@ -149,10 +149,7 @@ Mirrors React Vaul. Callbacks are emited. `open` and `activeSnapPoint` both supp
 
 ## Alternatives
 
-Two other Vue ports of the original [vaul](https://github.com/emilkowalski/vaul) exist:
-
-- [**unovue/vaul-vue**](https://github.com/unovue/vaul-vue) — Unmaintained. Requires installing `reka-ui` library.
-- [**unovue/reka-ui**](https://github.com/unovue/reka-ui) — Maintained. Requires installing the `reka-ui` library.
+[**unovue/reka-ui**](https://github.com/unovue/reka-ui) is another, actively maintained, Vue port of the original [vaul](https://github.com/emilkowalski/vaul). It requires installing the `reka-ui` library.
 
 This package has no runtime dependencies and ships only what you need.
 
